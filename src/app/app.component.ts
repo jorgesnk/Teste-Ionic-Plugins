@@ -11,35 +11,26 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   rootPage: any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, private oneSignal: OneSignal, splashScreen: SplashScreen) {
-
+  constructor(platform: Platform, statusBar: StatusBar,
+    private oneSignal: OneSignal, splashScreen: SplashScreen) {
+    //inicio push
     platform.ready().then(() => {
-      splashScreen.show();
       statusBar.styleDefault();
-      splashScreen.hide();
-
-
       this.oneSignal.startInit('fb8143c0-d762-4e12-a247-c9901f18cc96', '655454125432');
-
       this.oneSignal.getIds().then(data => {
       })
-
-
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
-
-
       this.oneSignal.handleNotificationReceived().subscribe((data) => {
         console.log(data);
         alert(data.payload.additionalData.teste);
       })
 
       this.oneSignal.handleNotificationOpened().subscribe(() => {
-
       });
-
       this.oneSignal.endInit();
-
-
+      //fim push
+      
+      splashScreen.hide();
 
     });
   }

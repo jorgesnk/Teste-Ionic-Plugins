@@ -6,7 +6,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { CardIO } from '@ionic-native/card-io';
 import { InAppPurchase } from '@ionic-native/in-app-purchase';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-
+import { AboutPage } from '../about/about'
 
 @Component({
   selector: 'page-home',
@@ -18,12 +18,15 @@ export class HomePage implements OnInit {
     private barcodeScanner: BarcodeScanner,
     public navCtrl: NavController, private admobFree: AdMobFree,
     private youtube: YoutubeVideoPlayer,
-    private localNotifications: LocalNotifications, ) {
+    private localNotifications: LocalNotifications) {
 
-    const bannerConfig: AdMobFreeBannerConfig = {
+      const bannerConfig: AdMobFreeBannerConfig = {
       id: "ca-app-pub-6792308911607879/6693551819",
-      autoShow: true,
-      overlap: true,
+      bannerAtTop: true,
+      isTesting: true,
+      overlap:true,
+      autoShow:true,
+      
     };
     this.admobFree.banner.config(bannerConfig);
     this.admobFree.banner.prepare()
@@ -34,14 +37,11 @@ export class HomePage implements OnInit {
 
 
   ngOnInit() {
-
-  
-
   }
 
-
-
-
+  vai() {
+    this.navCtrl.push(AboutPage, { teste: { nome: "teste" } })
+  }
 
   teste() {
     this.youtube.openVideo('H7MvroNuEjY');
