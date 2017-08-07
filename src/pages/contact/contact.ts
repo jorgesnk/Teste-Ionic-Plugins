@@ -8,7 +8,7 @@ import {
   LatLng,
   CameraPosition,
   MarkerOptions,
-  Marker
+  Marker,
 } from '@ionic-native/google-maps';
 @Component({
   selector: 'page-contact',
@@ -19,7 +19,7 @@ export class ContactPage {
 
   public build: GoogleMap
   constructor(private ts: TransitionProvider, public navCtrl: NavController,
-    private googleMaps: GoogleMaps) {
+    private googleMaps: GoogleMaps,) {
   }
 
 
@@ -50,6 +50,20 @@ export class ContactPage {
 
         var lat = new LatLng(43.0741902, -89.3809805);
 
+        var makOpt: MarkerOptions;
+        makOpt = { icon: 'blue', position: lat, title: 'ola' };
+        
+
+        this.build.addMarker(makOpt)
+      
+          .then((marker: Marker) => {
+            marker.showInfoWindow();
+            marker.setDisableAutoPan(true);
+            marker.addEventListener(GoogleMapsEvent.INFO_CLICK).subscribe(function(){
+              console.log('foiii');
+              alert('foi mesmo');
+            })
+          });
 
       }
     );

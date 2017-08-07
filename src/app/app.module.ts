@@ -19,6 +19,7 @@ import { CardIO } from '@ionic-native/card-io';
 import { InAppPurchase } from '@ionic-native/in-app-purchase';
 import { GoogleMaps } from "@ionic-native/google-maps";
 import { TransitionProvider } from '../providers/transition/transition';
+import { CallNumber } from '@ionic-native/call-number';
 
 
 @NgModule({
@@ -54,7 +55,9 @@ import { TransitionProvider } from '../providers/transition/transition';
     OneSignal,
     NativePageTransitions,
     Device,
+    CallNumber,
     GoogleMaps,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TransitionProvider,
     TransitionProvider,
