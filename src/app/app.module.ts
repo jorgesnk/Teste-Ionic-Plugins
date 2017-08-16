@@ -20,6 +20,8 @@ import { InAppPurchase } from '@ionic-native/in-app-purchase';
 import { GoogleMaps } from "@ionic-native/google-maps";
 import { TransitionProvider } from '../providers/transition/transition';
 import { CallNumber } from '@ionic-native/call-number';
+import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
+
 
 
 @NgModule({
@@ -57,6 +59,7 @@ import { CallNumber } from '@ionic-native/call-number';
     Device,
     CallNumber,
     GoogleMaps,
+    BackgroundGeolocation,
     
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TransitionProvider,

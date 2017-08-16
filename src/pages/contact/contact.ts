@@ -88,6 +88,9 @@ export class ContactPage {
     this.build.clear();
   }
 
+  ola(){
+    alert('oiiii')
+  }
 
 
 }

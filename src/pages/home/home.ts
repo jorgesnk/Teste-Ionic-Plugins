@@ -23,7 +23,7 @@ export class HomePage implements OnInit {
       const bannerConfig: AdMobFreeBannerConfig = {
       id: "ca-app-pub-6792308911607879/6693551819",
       bannerAtTop: true,
-      isTesting: true,
+      isTesting: false,
       overlap:true,
       autoShow:true,
       
